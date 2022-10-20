@@ -5,12 +5,13 @@
     <title>Title</title>
 </head>
 <body>
+{% for film in films.results %}
     <h2>Карточка</h2>
 <h3>Фильм: {{ film.title }}</h3>
     <h3>{{ film.opening_crawl }}</h3>
 <!--    <h3>Фильм: {{ film.title }}</h3>-->
-
-
+<a href="{% url 'film_detail' %}?url={{film.url|urlencode}}">{{ film.title }}</a>
+{% endfor %}
 <p>{{ film }}</p>
 </body>
 </html>
